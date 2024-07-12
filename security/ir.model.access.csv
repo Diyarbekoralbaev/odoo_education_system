@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ems_admin_course,ems.admin.course,model_ems_course,base.group_user,1,1,1,1
+access_ems_admin_teacher,ems.admin.teacher,model_ems_teacher,base.group_user,1,1,1,1
+access_ems_admin_student,ems.admin.student,model_ems_student,base.group_user,1,1,1,1
+access_ems_admin_group,ems.admin.group,model_ems_group,base.group_user,1,1,1,1
+access_ems_admin_payment,ems.admin.payment,model_ems_payment,base.group_user,1,1,1,1
+access_ems_admin_teacher_payment,ems.admin.teacher_payment,model_ems_teacher_payment,base.group_user,1,1,1,1
+
+access_ems_administrator_course,ems.administrator.course,model_ems_course,base.group_user,1,0,0,0
+access_ems_administrator_teacher,ems.administrator.teacher,model_ems_teacher,base.group_user,1,0,0,0
+access_ems_administrator_student,ems.administrator.student,model_ems_student,base.group_user,1,0,0,0
+access_ems_administrator_group,ems.administrator.group,model_ems_group,base.group_user,1,0,0,0
+access_ems_administrator_payment,ems.administrator.payment,model_ems_payment,base.group_user,1,0,0,0
+access_ems_administrator_teacher_payment,ems.administrator.teacher_payment,model_ems_teacher_payment,base.group_user,1,0,0,0

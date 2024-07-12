@@ -1,0 +1,36 @@
+<!-- Teacher Views -->
+<odoo>
+    <record id="view_teacher_form" model="ir.ui.view">
+        <field name="name">teacher.form</field>
+        <field name="model">ems.teacher</field>
+        <field name="arch" type="xml">
+            <form string="Teacher">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="course_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_teacher_tree" model="ir.ui.view">
+        <field name="name">teacher.tree</field>
+        <field name="model">ems.teacher</field>
+        <field name="arch" type="xml">
+            <tree string="Teachers">
+                <field name="name"/>
+                <field name="course_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_teacher" model="ir.actions.act_window">
+        <field name="name">Teachers</field>
+        <field name="res_model">ems.teacher</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_teachers" name="Teachers" parent="menu_payment_management" action="action_teacher" sequence="2"/>
+</odoo>

@@ -1,0 +1,43 @@
+<!-- Course Views -->
+<odoo>
+    <record id="view_course_form" model="ir.ui.view">
+        <field name="name">course.form</field>
+        <field name="model">ems.course</field>
+        <field name="arch" type="xml">
+            <form string="Course">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="price"/>
+                        <field name="duration"/>
+                        <field name="state"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_course_tree" model="ir.ui.view">
+        <field name="name">course.tree</field>
+        <field name="model">ems.course</field>
+        <field name="arch" type="xml">
+            <tree string="Courses">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="price"/>
+                <field name="duration"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_course" model="ir.actions.act_window">
+        <field name="name">Courses</field>
+        <field name="res_model">ems.course</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_payment_management" name="Payment Management" sequence="1"/>
+    <menuitem id="menu_courses" name="Courses" parent="menu_payment_management" action="action_course" sequence="1"/>
+</odoo>

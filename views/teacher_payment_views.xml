@@ -1,0 +1,40 @@
+<!-- Teacher Payment Views -->
+<odoo>
+    <record id="view_teacher_payment_form" model="ir.ui.view">
+        <field name="name">teacher_payment.form</field>
+        <field name="model">ems.teacher_payment</field>
+        <field name="arch" type="xml">
+            <form string="Teacher Payment">
+                <sheet>
+                    <group>
+                        <field name="teacher_id"/>
+                        <field name="amount"/>
+                        <field name="date"/>
+                        <field name="note"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_teacher_payment_tree" model="ir.ui.view">
+        <field name="name">teacher_payment.tree</field>
+        <field name="model">ems.teacher_payment</field>
+        <field name="arch" type="xml">
+            <tree string="Teacher Payments">
+                <field name="teacher_id"/>
+                <field name="amount"/>
+                <field name="date"/>
+                <field name="note"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_teacher_payment" model="ir.actions.act_window">
+        <field name="name">Teacher Payments</field>
+        <field name="res_model">ems.teacher_payment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_teacher_payments" name="Teacher Payments" parent="menu_payment_management" action="action_teacher_payment" sequence="6"/>
+</odoo>

@@ -1,0 +1,61 @@
+<!-- Group Views -->
+<odoo>
+    <record id="view_group_form" model="ir.ui.view">
+        <field name="name">group.form</field>
+        <field name="model">ems.group</field>
+        <field name="arch" type="xml">
+            <form string="Group">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="course_id"/>
+                        <field name="teacher_id"/>
+                        <field name="student_ids"/>
+                    </group>
+                    <notebook>
+                        <page string="Payments">
+                            <field name="payment_ids">
+                                <tree string="Payments">
+                                    <field name="student_id"/>
+                                    <field name="date"/>
+                                    <field name="amount"/>
+                                    <field name="state"/>
+                                    <field name="note"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_group_form" model="ir.ui.view">
+        <field name="name">group.form</field>
+        <field name="model">ems.group</field>
+        <field name="arch" type="xml">
+            <form string="Group" create="false" edit="false">
+                <header>
+                    <button string="Release Fees" type="object" name="release_fees" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="course_id"/>
+                        <field name="teacher_id"/>
+                        <field name="student_ids"/>
+                        <field name="state"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_group" model="ir.actions.act_window">
+        <field name="name">Groups</field>
+        <field name="res_model">ems.group</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_groups" name="Groups" parent="menu_payment_management" action="action_group" sequence="4"/>
+</odoo>

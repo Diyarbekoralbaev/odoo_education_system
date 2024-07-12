@@ -1,0 +1,38 @@
+<!-- Report Course -->
+<odoo>
+    <template id="report_course">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <h2>Courses Report</h2>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="docs" t-as="course">
+                            <td>
+                                <span t-field="course.name"/>
+                            </td>
+                            <td>
+                                <span t-field="course.description"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <report
+        id="course_report"
+        model="payment_management.course"
+        string="Course Report"
+        report_type="qweb-pdf"
+        name="payment_management.report_course"
+        file="payment_management.report_course"
+        print_report_name="'Course Report - %s' % (object.name)"
+    />
+</odoo>

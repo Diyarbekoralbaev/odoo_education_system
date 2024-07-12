@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <!-- Demo Courses -->
+        <record id="course_english" model="ems.course">
+            <field name="name">English</field>
+            <field name="description">English Language Course</field>
+            <field name="price">100.0</field>
+            <field name="duration">30</field>
+            <field name="state">draft</field>
+        </record>
+        <record id="course_math" model="ems.course">
+            <field name="name">Mathematics</field>
+            <field name="description">Mathematics Course</field>
+            <field name="price">150.0</field>
+            <field name="duration">45</field>
+            <field name="state">draft</field>
+        </record>
+
+        <!-- Demo Teachers -->
+        <record id="teacher_john" model="ems.teacher">
+            <field name="name">John Doe</field>
+            <field name="age">35</field>
+        </record>
+        <record id="teacher_jane" model="ems.teacher">
+            <field name="name">Jane Smith</field>
+            <field name="age">30</field>
+        </record>
+
+        <!-- Demo Students -->
+        <record id="student_alice" model="ems.student">
+            <field name="name">Alice Johnson</field>
+            <field name="age">20</field>
+        </record>
+        <record id="student_bob" model="ems.student">
+            <field name="name">Bob Brown</field>
+            <field name="age">22</field>
+        </record>
+
+        <!-- Demo Groups -->
+        <record id="group_english_1" model="ems.group">
+            <field name="name">English Group 1</field>
+            <field name="course_id" ref="course_english"/>
+            <field name="teacher_id" ref="teacher_john"/>
+            <field name="student_ids" eval="[(6, 0, [ref('student_alice'), ref('student_bob')])]"/>
+            <field name="state">draft</field>
+        </record>
+
+        <!-- Demo Payments -->
+        <record id="payment_alice_english" model="ems.payment">
+            <field name="student_id" ref="student_alice"/>
+            <field name="group_id" ref="group_english_1"/>
+            <field name="amount">100.0</field>
+            <field name="date">2024-07-01</field>
+            <field name="note">Payment for English course</field>
+            <field name="state">draft</field>
+        </record>
+    </data>
+</odoo>
